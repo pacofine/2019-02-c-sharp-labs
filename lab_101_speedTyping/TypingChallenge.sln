@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderedMode", "TypingChallenge\OrderedMode.csproj", "{BEA50416-A64F-4524-9210-AD4082980819}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnOrderedMode", "UnOrderedMode\UnOrderedMode.csproj", "{9556C36B-FC72-4648-8DB7-0DA08998B42E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BEA50416-A64F-4524-9210-AD4082980819}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEA50416-A64F-4524-9210-AD4082980819}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEA50416-A64F-4524-9210-AD4082980819}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEA50416-A64F-4524-9210-AD4082980819}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9556C36B-FC72-4648-8DB7-0DA08998B42E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9556C36B-FC72-4648-8DB7-0DA08998B42E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9556C36B-FC72-4648-8DB7-0DA08998B42E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9556C36B-FC72-4648-8DB7-0DA08998B42E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DC5C3749-4788-4070-A4AD-B6F2E538506A}
+	EndGlobalSection
+EndGlobal
