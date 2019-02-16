@@ -13,9 +13,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_103_peopleGenerator", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_102_speedTyping_GUI", "lab_06_wpf\lab_102_speedTyping_GUI.csproj", "{FB5A34CB-55D9-4837-A9C8-F7FDE06AF9E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab_04_array_test", "Lab_04_array_test\Lab_04_array_test.csproj", "{0CDE4D84-EB90-4C8D-87FE-04FA6C891454}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_04_array_test", "Lab_04_array_test\lab_04_array_test.csproj", "{0CDE4D84-EB90-4C8D-87FE-04FA6C891454}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab_04_array", "Lab_04_array\Lab_04_array.csproj", "{774EF6E6-4D29-4C62-B7AF-E7DE3C896C84}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_04_array", "Lab_04_array\lab_04_array.csproj", "{774EF6E6-4D29-4C62-B7AF-E7DE3C896C84}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_104_array_list_queue_stack_dict_01", "lab_104_array_list_queue_stack_dict_01\lab_104_array_list_queue_stack_dict_01.csproj", "{597C35C1-78B2-460B-8F0D-BF18E5B28DBA}"
 EndProject
