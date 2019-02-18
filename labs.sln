@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_11_entity_gui", "lab_11
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_103_randomPeopleGenerator", "lab_103_randomPeopleGenerator\lab_103_randomPeopleGenerator.csproj", "{BCFD4F4C-1DC4-4A2F-AF13-7E564969557E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "missPackMan", "missPackMan\missPackMan.csproj", "{552AF793-94B2-43B2-A0FF-3C04D9E53CA3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,10 @@ Global
 		{BCFD4F4C-1DC4-4A2F-AF13-7E564969557E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCFD4F4C-1DC4-4A2F-AF13-7E564969557E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCFD4F4C-1DC4-4A2F-AF13-7E564969557E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{552AF793-94B2-43B2-A0FF-3C04D9E53CA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{552AF793-94B2-43B2-A0FF-3C04D9E53CA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{552AF793-94B2-43B2-A0FF-3C04D9E53CA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{552AF793-94B2-43B2-A0FF-3C04D9E53CA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
