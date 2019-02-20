@@ -13,22 +13,36 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace lab_11_entity_gui
+namespace lab_11_Entity_GUI2
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Customer> customers = new List<Customer>();
+        List<string> customerList = new List<string>();
+
         public MainWindow()
         {
             InitializeComponent();
-       
+            Initialise();
         }
 
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        void Initialise()
         {
+            using (var db = new NorthwindEntities())
+            {
 
+                customers = db.Customers.ToList<Customer>();
+
+                foreach (var c in customers)
+                {
+                    customerList.Add($"{c.ContactName} has ID {c.CustomerID}");
+                }
+
+                ListBox01.ItemsSource = customerList;
+            }
         }
     }
 }

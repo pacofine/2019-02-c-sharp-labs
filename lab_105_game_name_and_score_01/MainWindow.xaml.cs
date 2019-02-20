@@ -29,9 +29,9 @@ namespace lab_105_game_name_and_score_01
         {
             File.WriteAllText("User.txt", enterFirstName.Text + Environment.NewLine + enterLastName + Environment.NewLine + enterScore);
 
-            enterFirstName.text = MySettings.Default.SomeSetting;
-            MySettings.Default.SomeSetting = enterFirstName.text;
-            MySettings.Default.Save();
+          //  enterFirstName.text = MySettings.Default.SomeSetting;
+            // MySettings.Default.SomeSetting = enterFirstName.text;
+          //  MySettings.Default.Save();
         }
 
         private void enterFirstName_TextChanged(object sender, TextChangedEventArgs e)
