@@ -43,11 +43,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Customer.cs">
+      <DependentUpon>NorthwindModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NorthwindModel.Context.cs">
+      <DependentUpon>NorthwindModel.Context.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="NorthwindModel.cs">
+      <DependentUpon>NorthwindModel.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="NorthwindModel.Designer.cs">
+      <DependentUpon>NorthwindModel.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="NorthwindModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NorthwindModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="NorthwindModel.edmx.diagram">
+      <DependentUpon>NorthwindModel.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NorthwindModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NorthwindModel.edmx</DependentUpon>
+      <LastGenOutput>NorthwindModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="NorthwindModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NorthwindModel.edmx</DependentUpon>
+      <LastGenOutput>NorthwindModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

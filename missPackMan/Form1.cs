@@ -180,7 +180,7 @@ namespace missPackMan
             {
                 if (x is PictureBox && x.Tag is "wall" || x.Tag is "ghost")
                 {
-                    if (((PictureBox)x).Bounds.IntersectsWith(pacman.Bounds) || score == 64 || bonusScore == 10)
+                    if (((PictureBox)x).Bounds.IntersectsWith(pacman.Bounds))
                     {
                         pacman.Left = 680;
                         pacman.Top = 25;
@@ -207,7 +207,7 @@ namespace missPackMan
                         timer1.Stop();
                     }
 
-                    if (score == 64 || bonusScore == 10)
+                    else if (score == 64 || bonusScore == 10)
                     {
                         pacman.Left = 680;
                         pacman.Top = 25;
@@ -248,7 +248,7 @@ namespace missPackMan
                     if (((PictureBox)x).Bounds.IntersectsWith(pacman.Bounds))
                     {
                         this.Controls.Remove(x);
-                        score += 5;
+                        bonusScore += 5;
                     }
                 }
             }

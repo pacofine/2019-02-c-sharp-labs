@@ -501,9 +501,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Showcard Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(380, 364);
+            this.label2.Location = new System.Drawing.Point(390, 379);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(215, 43);
+            this.label2.Size = new System.Drawing.Size(209, 42);
             this.label2.TabIndex = 30;
             this.label2.Text = "Game Over";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1312,7 +1312,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Showcard Gothic", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(390, 215);
+            this.label3.Location = new System.Drawing.Point(389, 205);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(196, 46);
             this.label3.TabIndex = 140;

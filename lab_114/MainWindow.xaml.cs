@@ -13,11 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace lab_11_Entity_GUI2
+namespace lab_114
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    
     public partial class MainWindow : Window
     {
         List<Customer> customers = new List<Customer>();
@@ -26,7 +24,7 @@ namespace lab_11_Entity_GUI2
 
         public MainWindow()
         {
-            InitializeComponent();
+            //InitializeComponent();
             Initialise();
         }
 
@@ -37,7 +35,7 @@ namespace lab_11_Entity_GUI2
 
                 customers = db.Customers.ToList<Customer>();
 
-                foreach (var c in customers)    
+                foreach (var c in customers)
                 {
                     customerList.Add($"{c.ContactName} has ID {c.CustomerID}");
                 }
@@ -60,10 +58,10 @@ namespace lab_11_Entity_GUI2
 
         }
 
-        //private void TextBoxName_TextChanged(object sender, TextChangedEventArgs e)
-        //{
-        //    customer1 = (Customer)ListBox03.SelectedItem;
-        //    TextBoxName.Text = customer1.ContactName;
-        //}
+        private void TextBoxName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            customer1 = (Customer)ListBox03.SelectedItem;
+            TextBoxName.Text = customer1.ContactName;
+        }
     }
 }
