@@ -23,6 +23,7 @@ namespace lab_11_Entity_GUI2
         List<Customer> customers = new List<Customer>();
         List<string> customerList = new List<string>();
         Customer customer1;
+        List<String> cities = new List<string>();
 
         public MainWindow()
         {
@@ -58,12 +59,50 @@ namespace lab_11_Entity_GUI2
                 ListBox03.DisplayMemberPath = "ContactName";
             }
 
+            //populate static combobox 
+            ComboBoxStaticCity.Items.Add("New York");
+            ComboBoxStaticCity.Items.Add("Paris");
+            ComboBoxStaticCity.Items.Add("Milan");
+
+            using (var db = new NorthwindEntities())
+            {
+                cities =
+                    (from c in db.Customers
+                     select c.City).Distinct().OrderBy(city=>city).ToList<string>();
+                ComboBoxBoundCity.ItemsSource = cities;
+            }
+
         }
 
-        //private void TextBoxName_TextChanged(object sender, TextChangedEventArgs e)
-        //{
-        //    customer1 = (Customer)ListBox03.SelectedItem;
-        //    TextBoxName.Text = customer1.ContactName;
-        //}
+        private void TextBoxName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            customer1 = (Customer)ListBox03.SelectedItem;
+            TextBoxName.Text = customer1.ContactName;
+        }
+        
+        private void ComboBoxStaticCity_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+             MessageBox.Show($"you choose {ComboBoxStaticCity.SelectedItem}");
+        }
+
+        private void ComboBoxBoundCity_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+           
+        }
+
+        private void ListBox01_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+        private void ListBox02_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+        private void ListBox03_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            customer1 = (Customer)ListBox03.SelectedItem;
+            TextBoxName.Text = customer1.ContactName;
+        }
+        
     }
 }

@@ -7,8 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Background="#3274d1">
     <Grid>
-        <Grid Background="#985ed6">
-            <Grid.ColumnDefinitions>
+        <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -16,27 +15,15 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="10*"/>
             </Grid.RowDefinitions>
-            <!--<TextBox x:Name="TextBoxName" Grid.Row="1" Grid.Column="2" TextChanged="TextBoxName_TextChanged"/>-->
-            <ListBox x:Name="ListBox01" Grid.Column="0" Grid.Row="3" Background="#5e90d6"/>
-            <ListBox x:Name="ListBox02" Grid.Column="1" Grid.Row="3" Background="#5ec8d6">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock>
-                            <TextBlock.Text>
-                                <MultiBinding StringFormat="ID - {0} - Name - {1} - From - {2}">
-                                    <Binding Path="CustomerID"/>
-                                    <Binding Path="ContactName"/>
-                                    <Binding Path="City"/>
-                                </MultiBinding>
-                            </TextBlock.Text>
-                        </TextBlock>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-            <ListBox x:Name="ListBox03" Grid.Column="2" Grid.Row="3" Background="#5ed6bc"/>
-        </Grid>
-
+            <TextBox x:Name="TextBoxName" Grid.Row="0" Grid.Column="2" TextChanged="TextBoxName_TextChanged"/>
+            <ListBox x:Name="ListBox01" Grid.Column="0" Grid.Row="3" Background="#5e90d6" SelectionChanged="ListBox01_SelectionChanged"/>
+        <ListBox x:Name="ListBox02" Grid.Column="1" Grid.Row="3" Background="#5ec8d6" SelectionChanged="ListBox02_SelectionChanged"/>
+        <ListBox x:Name="ListBox03" Grid.Column="2" Grid.Row="3" Background="#5ed6bc" SelectionChanged="ListBox03_SelectionChanged"/>
+        <ComboBox x:Name="ComboBoxStaticCity" Grid.Column="1" Grid.Row="1" Background="#aec8f2" SelectionChanged="ComboBoxStaticCity_SelectionChanged"/>
+        <ComboBox x:Name="ComboBoxBoundCity" Grid.Column="2" Grid.Row="1" Background="#aec8f2" SelectionChanged="ComboBoxBoundCity_SelectionChanged"/>
+        
     </Grid>
 </Window>

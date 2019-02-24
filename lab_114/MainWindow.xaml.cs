@@ -18,50 +18,88 @@ namespace lab_114
     
     public partial class MainWindow : Window
     {
-        List<Customer> customers = new List<Customer>();
-        List<string> customerList = new List<string>();
-        Customer customer1;
+        public static List<Customer> customers = new List<Customer>();
+        public static List<string> customerList = new List<string>();
+        public static List<string> cities = new List<string>();
+        public static Customer customer1 = new Customer();
+        public static SortedDictionary<string, string> cityDictionary = new SortedDictionary<string, string>();
+
 
         public MainWindow()
         {
-            //InitializeComponent();
+            InitializeComponent();
             Initialise();
         }
 
-        void Initialise()
+        public void Initialise()
         {
+
             using (var db = new NorthwindEntities())
             {
+                customers = db.Customers.ToList();
+                ListBoxName.ItemsSource = customers;
+                ListBoxName.DisplayMemberPath = "ContactName";
 
-                customers = db.Customers.ToList<Customer>();
-
-                foreach (var c in customers)
+                foreach (var customer in customers)
                 {
-                    customerList.Add($"{c.ContactName} has ID {c.CustomerID}");
+                    if (!cityDictionary.ContainsKey(customer.City)) 
+                    {
+                        cityDictionary.Add(customer.City, customer.Country);
+                    }
                 }
 
-                ListBox01.ItemsSource = customerList;
-            }
+                foreach (var element in cityDictionary)
+                {
+                    ComboBoxCity.Items.Add(element.Key);
+                }
 
-            using (var db = new NorthwindEntities())
-            {
-                customers = db.Customers.ToList<Customer>();
-                ListBox02.ItemsSource = customers;
             }
-
-            using (var db = new NorthwindEntities())
-            {
-                customers = db.Customers.ToList<Customer>();
-                ListBox03.ItemsSource = customers;
-                ListBox03.DisplayMemberPath = "ContactName";
-            }
-
         }
 
-        private void TextBoxName_TextChanged(object sender, TextChangedEventArgs e)
+        private void ButtonUpdate_Click(object sender, RoutedEventArgs e)
         {
-            customer1 = (Customer)ListBox03.SelectedItem;
-            TextBoxName.Text = customer1.ContactName;
+            ListBoxName.SelectionChanged -= ListBoxName_SelectionChanged;
+
+            using (var db = new NorthwindEntities())
+            {
+                Customer customerToUpDate = db.Customers.Where(C => C.ContactName == customer1.ContactName).FirstOrDefault();
+
+                if (!TextBoxName.Text.Equals(""))
+                {
+                    customerToUpDate.ContactName = TextBoxName.Text;
+                    db.SaveChanges();
+                }
+            }
+
+            if (!TextBoxName.Text.Equals(""))
+            {
+                customer1.ContactName = TextBoxName.Text;
+                customer1.City = ComboBoxCity.SelectedItem.ToString();
+                customer1.Country = cityDictionary[ComboBoxCity.SelectedItem.ToString()];
+                Initialise();
+                ListBoxName.SelectedItem = customer1;
+                Update();
+                ListBoxName.SelectionChanged += ListBoxName_SelectionChanged;
+            }
         }
+
+        private void ListBoxName_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            customer1 = ListBoxName.SelectedItem as Customer;
+            TextBoxName.Text = customer1.ContactName.ToString();
+
+        }
+
+        private void Update()
+        {
+            ListBoxData.Items.Clear();
+            ListBoxData.Items.Add($"ID: {customer1.CustomerID}");
+            ListBoxData.Items.Add($"Name: {customer1.ContactName}");
+            ListBoxData.Items.Add($"City: {customer1.City}");
+            ListBoxData.Items.Add($"Country: {customer1.Country}");
+            ListBoxData.Items.Add($"Company: {customer1.CompanyName}");
+        }
+
+
     }
 }
