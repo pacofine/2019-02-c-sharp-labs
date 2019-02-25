@@ -87,6 +87,8 @@ namespace lab_114
         {
             customer1 = ListBoxName.SelectedItem as Customer;
             TextBoxName.Text = customer1.ContactName.ToString();
+            ListBoxData.SelectedItem = customer1.City;
+            Update();
 
         }
 
@@ -96,8 +98,6 @@ namespace lab_114
             ListBoxData.Items.Add($"ID: {customer1.CustomerID}");
             ListBoxData.Items.Add($"Name: {customer1.ContactName}");
             ListBoxData.Items.Add($"City: {customer1.City}");
-            ListBoxData.Items.Add($"Country: {customer1.Country}");
-            ListBoxData.Items.Add($"Company: {customer1.CompanyName}");
         }
 
 
