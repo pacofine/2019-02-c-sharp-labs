@@ -27,8 +27,6 @@ namespace lab_501_speed_typing_challenge_GUI
         
         public static int score = 0;
 
-        int time = Convert.ToInt32(time_text);
-
         DispatcherTimer dt = new DispatcherTimer();
         Stopwatch sw = new Stopwatch();
         string currentTime = string.Empty;
@@ -55,7 +53,7 @@ namespace lab_501_speed_typing_challenge_GUI
         void dt_Tick(object sender, EventArgs e)
         {
             string time_text = TB_Time.Text;
-            
+            int time = Convert.ToInt32(time_text); 
 
             TimeSpan ts = TimeSpan.FromSeconds(time);
 
