@@ -89,7 +89,14 @@ namespace lab_114
             TextBoxName.Text = customer1.ContactName.ToString();
             ListBoxData.SelectedItem = customer1.City;
             Update();
-
+        }
+        
+        private void ListBoxData_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            customer1 = ListBoxName.SelectedItem as Customer;
+            TextBoxName.Text = customer1.ContactName.ToString();
+            ListBoxData.SelectedItem = customer1.City;
+            Update();
         }
 
         private void Update()
@@ -99,7 +106,5 @@ namespace lab_114
             ListBoxData.Items.Add($"Name: {customer1.ContactName}");
             ListBoxData.Items.Add($"City: {customer1.City}");
         }
-
-
     }
 }

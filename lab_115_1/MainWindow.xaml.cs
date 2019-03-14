@@ -17,24 +17,7 @@ using System.Windows.Shapes;
 
 namespace Lab_115_Northwind_Entity_With_OOP
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// Lab 115
-    /// read customers
-    /// cast to active customers
-    /// set IsActive to true for all customers
-    /// 
-    /// create 2 list boxes and radio button to enable/disable isActive
-    /// 
-    /// click on customer to select and display all details on screen
-    /// 
-    /// radio is a toggle
-    /// 
-    /// first listbox is only for ACTIVE customers
-    /// if in active, remove from first listbox and add to second listbox
-    /// 
-    /// and reverse
-    /// </summary>
+
     public partial class MainWindow : Window
     {
         static List<Customer> customers = new List<Customer>();

@@ -5,8 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:lab_115_Northwind_Entity_with_OOP"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="Auto" Width="Auto" Background="LightBlue">
     <Grid>
-        
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="1.5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <ListBox x:Name="ListBoxActiveCustomers" Grid.Row="1" Grid.Column="1" Grid.RowSpan="9" Background="LightSeaGreen"/>
+        <ListBox x:Name="ListBoxInActiveCustomers" Grid.Row="1" Grid.Column="5" Grid.RowSpan="9" Background="LightSeaGreen"/>
+        <ListBox x:Name="ListBoxData" Grid.Row="2" Grid.Column="3" Grid.RowSpan="5" Background="LightCyan"/>
+
+        <RadioButton x:Name="ButtonActive" Content="Active" Grid.Row="8" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" IsEnabled="False"  ClickMode="Press" Background="#FFDD2020"/>
+        <RadioButton x:Name="ButtonInActive" Content="InActive" Grid.Row="9" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" IsEnabled="False" ClickMode="Press" Background="#FFDD2020"/>
+
+        <TextBox x:Name="Title" Grid.Row="0" Grid.Column="3" Text="Active/Inactive Customers" TextWrapping="Wrap" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Background="Transparent"/>
     </Grid>
 </Window>
