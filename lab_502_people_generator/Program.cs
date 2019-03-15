@@ -21,22 +21,10 @@ namespace lab_103_randomPeopleGenerator
             };
 
             List<int> age_year = new List<int>();
-            List<int> age_month = new List<int>();
-            List<int> age_day = new List<int>();
 
             for (int DOB = 3; DOB < 7; DOB++)
             {
                 age_year.Add(2000 - DOB);
-            }
-
-            for (int DOB = 3; DOB < 7; DOB++)
-            {
-                age_month.Add(2000 - DOB);
-            }
-
-            for (int DOB = 3; DOB < 7; DOB++)
-            {
-                age_day.Add(2000 - DOB);
             }
             
             var permutations = new List<Tuple<int, int, int>>();
@@ -45,7 +33,7 @@ namespace lab_103_randomPeopleGenerator
             Random random = new Random();
             int a, b, c;
 
-            //We want to generate 500 names.
+            //We want to generate 50 names.
             while (permutations.Count < 50)
             {
                 a = random.Next(0, firstName.Count);
@@ -62,10 +50,7 @@ namespace lab_103_randomPeopleGenerator
 
             foreach (var tuple in permutations)
             {
-                people.Add(string.Format("{0} {1} {2}", firstName[tuple.Item1],
-                                                        lastName[tuple.Item2],
-                                                        age_year[tuple.Item3])
-                );
+                people.Add(string.Format("{0} {1} {2}", firstName[tuple.Item1], lastName[tuple.Item2], age_year[tuple.Item3]));
             }
 
             foreach (var n in people)
@@ -75,10 +60,5 @@ namespace lab_103_randomPeopleGenerator
 
             Console.ReadKey();
         }
-
     }
-    
 }
-
-
-
