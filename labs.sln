@@ -115,6 +115,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_500_speed_typing_challe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_501_speed_typing_challenge_GUI", "lab_501_speed_typing_challenge_GUI\lab_501_speed_typing_challenge_GUI.csproj", "{C608B9D4-F0F8-4774-8309-FA587E3CCEC7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_502_people_generator", "lab_502_people_generator\lab_502_people_generator.csproj", "{98CDB6E5-843F-4F0A-ABA5-E5F169EED18D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -345,6 +347,10 @@ Global
 		{C608B9D4-F0F8-4774-8309-FA587E3CCEC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C608B9D4-F0F8-4774-8309-FA587E3CCEC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C608B9D4-F0F8-4774-8309-FA587E3CCEC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98CDB6E5-843F-4F0A-ABA5-E5F169EED18D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98CDB6E5-843F-4F0A-ABA5-E5F169EED18D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98CDB6E5-843F-4F0A-ABA5-E5F169EED18D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98CDB6E5-843F-4F0A-ABA5-E5F169EED18D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -25,8 +25,11 @@ namespace lab_501_speed_typing_challenge_GUI
             
             //, 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'z' };
         
-        public static int score = 0;
+        int score = 0;
+        int time = 5;
 
+        public static List<char> inputList = new List<char>();
+        
         DispatcherTimer dt = new DispatcherTimer();
         Stopwatch sw = new Stopwatch();
         string currentTime = string.Empty;
@@ -36,24 +39,33 @@ namespace lab_501_speed_typing_challenge_GUI
             InitializeComponent();
             dt.Tick += new EventHandler(dt_Tick);
             dt.Interval = new TimeSpan(0, 0, 1);
-
-            while (sw.IsRunning == true)
-            {
-                string text = TB_Letters.Text;
-                char[] textToChar = text.ToCharArray();
-
-                if (alphabet[0] == textToChar[0])
-                {
-                    score++;
-                    TB_Score.Text = score.ToString();
-                }
-            }
         }
 
         void dt_Tick(object sender, EventArgs e)
         {
+            TB_Score.Text = score.ToString();
+
+            //if (TB_Timer.Text == "00:00")
+            //{
+            //    TB_Score.Text = inputList.Sum();
+            //}
+
+            string inputString = TB_Letters.ToString();
+            char[] inputChar = inputString.ToCharArray();
+
+            foreach (var item in inputChar)
+            {
+                inputList.Add(item);
+
+                if (inputList == alphabet)
+                {
+                    score++;
+                }
+            }
+
+
             string time_text = TB_Time.Text;
-            int time = Convert.ToInt32(time_text); 
+            //int time = Convert.ToInt32(time_text); 
 
             TimeSpan ts = TimeSpan.FromSeconds(time);
 
@@ -64,10 +76,10 @@ namespace lab_501_speed_typing_challenge_GUI
                 time--;
                 TB_Timer.Text = currentTime;
             }
-            
-            if (time == 0)
+            else if (time == 0)
             {
                 sw.Stop();
+                MessageBox.Show("Times Up!");
             }
 
             ts = ts.Add(TimeSpan.FromSeconds(-1));

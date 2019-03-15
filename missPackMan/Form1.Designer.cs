@@ -1152,6 +1152,7 @@
             this.yellowGhost1.TabIndex = 131;
             this.yellowGhost1.TabStop = false;
             this.yellowGhost1.Tag = "ghost";
+            this.yellowGhost1.Click += new System.EventHandler(this.yellowGhost1_Click);
             // 
             // redGhost1
             // 

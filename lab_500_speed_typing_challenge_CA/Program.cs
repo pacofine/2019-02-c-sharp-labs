@@ -25,7 +25,9 @@ namespace TypingChallenge
             if (mode == 1)
             {
                 Mode_1(time);
-            } else if (mode == 2)
+            }
+
+            else if (mode == 2)
             {
                 Mode_2(time);
             }
