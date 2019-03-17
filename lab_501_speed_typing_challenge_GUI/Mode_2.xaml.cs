@@ -14,64 +14,73 @@ using System.Windows.Shapes;
 using System.Diagnostics;
 using System.Windows.Threading;
 
-
 namespace lab_501_speed_typing_challenge_GUI
 {
-    /// <summary>
-    /// Interaction logic for Mode_2.xaml
-    /// </summary>
     public partial class Mode_2 : Window
     {
-        public static int score = 0;
+        string alphabet = "abcdefghijklmnopqrstuvwxyz";
 
-        DispatcherTimer dt = new DispatcherTimer();
-        Stopwatch sw = new Stopwatch();
-        string currentTime = string.Empty;
+        DispatcherTimer disp_timer = new DispatcherTimer();
+        Stopwatch stop_watch = new Stopwatch();
+        string current_time = string.Empty;
+
+        int score = 0;
+        int time { get; set; }
 
         public Mode_2()
         {
             InitializeComponent();
-            dt.Tick += new EventHandler(dt_Tick);
-            dt.Interval = new TimeSpan(0, 0, 1);
-
-            while (sw.IsRunning == true)
-            {
-                string text = TB_Letters.Text;
-                char[] textToChar = text.ToCharArray();
-
-                
-            }
+            disp_timer.Tick += new EventHandler(Disp_time_tick);
+            disp_timer.Interval = new TimeSpan(0, 0, 1);
         }
 
-        void dt_Tick(object sender, EventArgs e)
+        private void Disp_time_tick(object sender, EventArgs e)
         {
-            string time_text = TB_Time.Text;
-            int time = Convert.ToInt32(time_text);
+            TimeSpan time_span = TimeSpan.FromSeconds(time);
 
-            TimeSpan ts = TimeSpan.FromSeconds(time);
-
-            currentTime = String.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds);
+            current_time = String.Format("{0:00}:{1:00}", time_span.Minutes, time_span.Seconds);
 
             if (time >= 0)
             {
                 time--;
-                TB_Timer.Text = currentTime;
+                TB_Timer.Text = current_time;
             }
-
-            if (time == 0)
+            else if (time == 0)
             {
-                sw.Stop();
+                stop_watch.Stop();
             }
-
-            ts = ts.Add(TimeSpan.FromSeconds(-1));
         }
 
-        private void Button_Start_Click(object sender, RoutedEventArgs e)
+        private void Btn_Start_Click(object sender, RoutedEventArgs e)
         {
-            sw.Start();
-            dt.Start();
+            stop_watch.Start();
+            disp_timer.Start();
         }
 
+        private void TB_Letters_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            char[] alphabet1 = alphabet.ToCharArray();
+            char[] text_input = TB_Letters.ToString().ToCharArray();
 
+            for (int i = 0; i < alphabet1.Length; i++)
+            {
+                if (alphabet[i] == text_input[i] && stop_watch.IsRunning)
+                {
+                    score++;
+                    TB_Score.Text = (score / 2).ToString();
+                    
+                }
+                else if (time < 0)
+                {
+                    MessageBox.Show($"Total score: {score / 2}");
+                    break;
+                }
+            }
+        }
+
+        private void TB_Time_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            time = Convert.ToInt32(TB_Time.Text);
+        }
     }
 }

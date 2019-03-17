@@ -16,57 +16,29 @@ using System.Windows.Threading;
 
 namespace lab_501_speed_typing_challenge_GUI
 {
-    /// <summary>
-    /// Interaction logic for Mode_1.xaml
-    /// </summary>
     public partial class Mode_1 : Window
     {
-        public static List<char> alphabet = new List<char>() { 'a', 'b', 'c' };
-            
-            //, 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'z' };
         
-        int score = 0;
-        int time = 5;
+        List<char> alphabet = new List<char> { 'a', 'b', 'c' };
 
-        public static List<char> inputList = new List<char>();
-        
-        DispatcherTimer dt = new DispatcherTimer();
-        Stopwatch sw = new Stopwatch();
+        //, 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'z' };
+
+        DispatcherTimer dispatcher_timer = new DispatcherTimer();
+        Stopwatch stop_watch = new Stopwatch();
         string currentTime = string.Empty;
+
+        int score = 0;
+        int time { get; set; }
 
         public Mode_1()
         {
             InitializeComponent();
-            dt.Tick += new EventHandler(dt_Tick);
-            dt.Interval = new TimeSpan(0, 0, 1);
+            dispatcher_timer.Tick += new EventHandler(dt_Tick);
+            dispatcher_timer.Interval = new TimeSpan(0, 0, 1);
         }
 
         void dt_Tick(object sender, EventArgs e)
         {
-            TB_Score.Text = score.ToString();
-
-            //if (TB_Timer.Text == "00:00")
-            //{
-            //    TB_Score.Text = inputList.Sum();
-            //}
-
-            string inputString = TB_Letters.ToString();
-            char[] inputChar = inputString.ToCharArray();
-
-            foreach (var item in inputChar)
-            {
-                inputList.Add(item);
-
-                if (inputList == alphabet)
-                {
-                    score++;
-                }
-            }
-
-
-            string time_text = TB_Time.Text;
-            //int time = Convert.ToInt32(time_text); 
-
             TimeSpan ts = TimeSpan.FromSeconds(time);
 
             currentTime = String.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds);
@@ -76,21 +48,33 @@ namespace lab_501_speed_typing_challenge_GUI
                 time--;
                 TB_Timer.Text = currentTime;
             }
-            else if (time == 0)
-            {
-                sw.Stop();
-                MessageBox.Show("Times Up!");
-            }
-
-            ts = ts.Add(TimeSpan.FromSeconds(-1));
         }
 
         private void Button_Start_Click(object sender, RoutedEventArgs e)
         {
-            sw.Start();
-            dt.Start();
+            stop_watch.Start();
+            dispatcher_timer.Start();
         }
-        
-        
+
+        private void TB_Letters_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //char text_input = TB_Letters.key;
+
+            //if (alphabet[0] == text_input && stop_watch.IsRunning)
+            //{
+            //    score++;
+            //    TB_Score.Text = (score / 2).ToString();
+            //}
+
+            //if (time < 0)
+            //{
+            //    MessageBox.Show($"Total score: {score /2}");
+            //}
+        }
+
+        private void TB_Time_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            time = Convert.ToInt32(TB_Time.Text);
+        }
     }
 }

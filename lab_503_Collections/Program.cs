@@ -46,7 +46,6 @@ namespace lab_503_Collections
             foreach (var item in myDic)
             {
                 total += item.Value;
-                
             }
 
             Console.WriteLine(total);

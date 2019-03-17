@@ -9,12 +9,13 @@
     <Grid>
         <Grid.ColumnDefinitions>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="TB_Letters" HorizontalAlignment="Left" Height="66" Margin="103,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="600" Grid.ColumnSpan="2"/>
-        <Button x:Name="Btn_Start" Content="Start" FontSize="30" FontFamily="Bodoni mt black" HorizontalAlignment="Left" Margin="553,45,0,0" VerticalAlignment="Top" Width="150" Height="50" Click="Button_Start_Click"/>
-        <TextBox x:Name="TB_Timer" TextAlignment="Center" FontSize="40" FontWeight="Bold" HorizontalAlignment="Left" Height="100" Margin="553,119,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150"/>
-        <TextBox x:Name="TB_Time" TextAlignment="Center" FontSize="40" FontWeight="Bold" HorizontalAlignment="Left" Height="100" Margin="103,125,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150"/>
-        <TextBox x:Name="TB_Score" HorizontalAlignment="Left" Height="180" Margin="302,45,0,0"  Text="0" FontSize="130" TextAlignment="Center"  VerticalAlignment="Top" Width="202"/>
+        <TextBox x:Name="TB_Letters" HorizontalAlignment="Left" Margin="103,230,0,32.4" TextWrapping="Wrap" FontFamily="Bodoni mt black" FontSize="30" Width="600" TextChanged="TB_Letters_TextChanged"/>
+        <Button x:Name="Btn_Start" Content="Start" FontSize="30" FontFamily="Bodoni mt black" HorizontalAlignment="Left" Margin="553,45,0,0" VerticalAlignment="Top" Width="150" Height="69" Click="Btn_Start_Click"/>
+        <TextBox x:Name="TB_Timer" Padding="0,20,0,00" Text="00:00" TextAlignment="Center" FontSize="40" FontWeight="Bold" HorizontalAlignment="Left" Height="106" Margin="553,119,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="TB_Time" TextAlignment="Center" Padding="0,20,0,00" FontSize="40" FontWeight="Bold" HorizontalAlignment="Left" Height="100" Margin="103,125,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150" TextChanged="TB_Time_TextChanged"/>
+        <TextBox x:Name="TB_Score" Padding="0,-20,0,0" HorizontalAlignment="Left" Height="106" Margin="302,119,0,0" Text="0" FontSize="100" TextAlignment="Center"  VerticalAlignment="Top" Width="202"/>
         <TextBox x:Name="TB_Time_Title" HorizontalAlignment="Left" Height="70" Margin="103,45,0,0" TextWrapping="Wrap" Text="Enter Time" TextAlignment="Center" FontFamily="Bodoni mt black" FontSize="30" VerticalAlignment="Top" Width="150"/>
+        <TextBox HorizontalAlignment="Left" Margin="302,45,0,256.4" Padding="0,10,0,0" TextWrapping="Wrap" Text="Score" TextAlignment="Center" FontFamily="Bodoni mt black" FontSize="40"  Width="202"/>
 
     </Grid>
 </Window>
