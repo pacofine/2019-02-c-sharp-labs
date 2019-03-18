@@ -19,13 +19,13 @@ namespace lab_501_speed_typing_challenge_GUI
     public partial class Mode_2 : Window
     {
         string alphabet = "abcdefghijklmnopqrstuvwxyz";
+        string current_time = string.Empty;
+        int score = 0;
+        int Time { get; set; }
 
         DispatcherTimer disp_timer = new DispatcherTimer();
         Stopwatch stop_watch = new Stopwatch();
-        string current_time = string.Empty;
-
-        int score = 0;
-        int time { get; set; }
+        
 
         public Mode_2()
         {
@@ -36,16 +36,16 @@ namespace lab_501_speed_typing_challenge_GUI
 
         private void Disp_time_tick(object sender, EventArgs e)
         {
-            TimeSpan time_span = TimeSpan.FromSeconds(time);
+            TimeSpan time_span = TimeSpan.FromSeconds(Time);
 
             current_time = String.Format("{0:00}:{1:00}", time_span.Minutes, time_span.Seconds);
 
-            if (time >= 0)
+            if (Time >= 0)
             {
-                time--;
+                Time--;
                 TB_Timer.Text = current_time;
             }
-            else if (time == 0)
+            else if (Time == 0)
             {
                 stop_watch.Stop();
             }
@@ -70,7 +70,7 @@ namespace lab_501_speed_typing_challenge_GUI
                     TB_Score.Text = (score / 2).ToString();
                     
                 }
-                else if (time < 0)
+                else if (Time < 0)
                 {
                     MessageBox.Show($"Total score: {score / 2}");
                     break;
@@ -80,7 +80,7 @@ namespace lab_501_speed_typing_challenge_GUI
 
         private void TB_Time_TextChanged(object sender, TextChangedEventArgs e)
         {
-            time = Convert.ToInt32(TB_Time.Text);
+            Time = Convert.ToInt32(TB_Time.Text);
         }
     }
 }

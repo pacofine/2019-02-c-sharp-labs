@@ -18,34 +18,32 @@ namespace lab_501_speed_typing_challenge_GUI
 {
     public partial class Mode_1 : Window
     {
-        
-        List<char> alphabet = new List<char> { 'a', 'b', 'c' };
 
-        //, 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'z' };
+        string alphabet = "abcdefghijklmnopqrstuvwxyz";
 
         DispatcherTimer dispatcher_timer = new DispatcherTimer();
         Stopwatch stop_watch = new Stopwatch();
         string currentTime = string.Empty;
 
         int score = 0;
-        int time { get; set; }
+        int Time { get; set; }
 
         public Mode_1()
         {
             InitializeComponent();
-            dispatcher_timer.Tick += new EventHandler(dt_Tick);
+            dispatcher_timer.Tick += new EventHandler(Dt_Tick);
             dispatcher_timer.Interval = new TimeSpan(0, 0, 1);
         }
 
-        void dt_Tick(object sender, EventArgs e)
+        void Dt_Tick(object sender, EventArgs e)
         {
-            TimeSpan ts = TimeSpan.FromSeconds(time);
+            TimeSpan ts = TimeSpan.FromSeconds(Time);
 
             currentTime = String.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds);
 
-            if (time >= 0)
+            if (Time >= 0)
             {
-                time--;
+                Time--;
                 TB_Timer.Text = currentTime;
             }
         }
@@ -58,23 +56,25 @@ namespace lab_501_speed_typing_challenge_GUI
 
         private void TB_Letters_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //char text_input = TB_Letters.key;
-
-            //if (alphabet[0] == text_input && stop_watch.IsRunning)
-            //{
-            //    score++;
-            //    TB_Score.Text = (score / 2).ToString();
-            //}
-
-            //if (time < 0)
-            //{
-            //    MessageBox.Show($"Total score: {score /2}");
-            //}
+            if (TB_Letters.Text[TB_Letters.Text.Length - 1] == alphabet[(TB_Letters.Text.Length-1)%26] && stop_watch.IsRunning)
+            {
+                score++;
+                TB_Score.Text = (score).ToString();
+            }
+            else if (Time < 0)
+            {
+                MessageBox.Show($"Total score: {score / 2}");
+            }
         }
 
         private void TB_Time_TextChanged(object sender, TextChangedEventArgs e)
         {
-            time = Convert.ToInt32(TB_Time.Text);
+            Time = Convert.ToInt32(TB_Time.Text);
+        }
+
+        private void TB_Timer_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

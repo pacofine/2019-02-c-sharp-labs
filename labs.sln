@@ -115,11 +115,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_500_speed_typing_challe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_501_speed_typing_challenge_GUI", "lab_501_speed_typing_challenge_GUI\lab_501_speed_typing_challenge_GUI.csproj", "{C608B9D4-F0F8-4774-8309-FA587E3CCEC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_502_people_generator", "lab_502_people_generator\lab_502_people_generator.csproj", "{98CDB6E5-843F-4F0A-ABA5-E5F169EED18D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab_502_people_generator", "lab_502_people_generator\lab_502_people_generator.csproj", "{98CDB6E5-843F-4F0A-ABA5-E5F169EED18D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_503_Collections", "lab_503_Collections\lab_503_Collections.csproj", "{3CAD69DB-5527-4168-98CB-274E8B0C0E75}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_504", "lab_504\lab_504.csproj", "{ABE8EC8F-FB0D-4009-A889-670A020EDD8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_501.1_Typing_Callenge_HighScore", "lab_501.1_Typing_Callenge_HighScore\lab_501.1_Typing_Callenge_HighScore.csproj", "{50131895-543F-4C47-9B4F-DF5CE92A8946}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_501.2_SpeedTypingChallenge_GUI", "lab_501.2_SpeedTypingChallenge_GUI\lab_501.2_SpeedTypingChallenge_GUI.csproj", "{73F2A4F5-732B-4E81-82C9-94A5003E3510}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -363,6 +367,14 @@ Global
 		{ABE8EC8F-FB0D-4009-A889-670A020EDD8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABE8EC8F-FB0D-4009-A889-670A020EDD8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABE8EC8F-FB0D-4009-A889-670A020EDD8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50131895-543F-4C47-9B4F-DF5CE92A8946}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50131895-543F-4C47-9B4F-DF5CE92A8946}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50131895-543F-4C47-9B4F-DF5CE92A8946}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50131895-543F-4C47-9B4F-DF5CE92A8946}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73F2A4F5-732B-4E81-82C9-94A5003E3510}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73F2A4F5-732B-4E81-82C9-94A5003E3510}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73F2A4F5-732B-4E81-82C9-94A5003E3510}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73F2A4F5-732B-4E81-82C9-94A5003E3510}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

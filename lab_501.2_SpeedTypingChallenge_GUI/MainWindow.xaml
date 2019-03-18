@@ -1,0 +1,19 @@
+﻿<Window x:Class="lab_501._2_SpeedTypingChallenge_GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab_501._2_SpeedTypingChallenge_GUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="800">
+    <Grid>
+        <TextBox x:Name="TB_Title" HorizontalAlignment="Left" Height="76" Margin="186,36,0,0" TextWrapping="Wrap" Text="Typing Challenge" FontSize="50" VerticalAlignment="Top" Width="414"/>
+        <TextBox x:Name="TB_Name_Label" HorizontalAlignment="Left" Height="42" Margin="186,149,0,0" TextWrapping="Wrap" Text="Enter Name" FontSize="30" VerticalAlignment="Top" Width="167"/>
+        <TextBox x:Name="TB_HighScore_Label" HorizontalAlignment="Left" Height="39" Margin="186,236,0,0" TextWrapping="Wrap" Text="High Score" FontSize="30" VerticalAlignment="Top" Width="167"/>
+        <TextBox x:Name="TB_NameInput" HorizontalAlignment="Left" Height="42" Margin="358,149,0,0" TextWrapping="Wrap" Text="" FontSize="30" VerticalAlignment="Top" Width="242"/>
+        <TextBox x:Name="TB_HighScoreInput" HorizontalAlignment="Left" Height="39" Margin="358,236,0,0" TextWrapping="Wrap" Text="" FontSize="30" VerticalAlignment="Top" Width="242"/>
+        <Button Content="Play" FontSize="30" HorizontalAlignment="Left" Height="53" Margin="43,197,0,0" VerticalAlignment="Top" Width="116" Click="Button_Click_1"/>
+        <Button Content="Save" FontSize="30" HorizontalAlignment="Left" Height="42" Margin="619,149,0,0" VerticalAlignment="Top" Width="90" Click="Button_Click"/>
+
+    </Grid>
+</Window>
