@@ -15,31 +15,29 @@ using System.Diagnostics;
 using System.Windows.Threading;
 using System.IO;
 
-namespace lab_501._2_SpeedTypingChallenge_GUI
+namespace lab_501._3_SpeedTypingChallenge_GUI
 {
     public partial class Window1 : Window
     {
-        string alphabet = "abcdefghijklmnopqrstuvwxyz";
-        
-
         DispatcherTimer dispatcher_timer = new DispatcherTimer();
         Stopwatch stop_watch = new Stopwatch();
-        string CurrentTime = string.Empty;
 
-        int Time;
-        int score = 0;
+        string alphabet = "abcdefghijklmnopqrstuvwxyx";
+        int Score = 0;
+        string CurrentTime = string.Empty;
+        int Time {get; set;}
 
         public Window1()
         {
             InitializeComponent();
-            Initialise();
-            dispatcher_timer.Tick += new EventHandler(Dispatcher_timer_Tick);
-            dispatcher_timer.Interval = new TimeSpan(0, 0, 1);
+            Initialize();
+            dispatcher_timer.Tick += new EventHandler(dispatcher_timer_Tick);
+            dispatcher_timer.Interval = new TimeSpan(0,0,1);
         }
 
-        private void Initialise()
+        private void Initialize()
         {
-            TB_Player.Text = File.ReadAllText("name.txt");
+            TB_name.Text = File.ReadAllText("name.txt");
             if (File.Exists("score.txt"))
             {
                 TB_HighScore.Text = File.ReadAllText("score.txt");
@@ -51,9 +49,9 @@ namespace lab_501._2_SpeedTypingChallenge_GUI
             TB_Score.Text = "0";
         }
 
-        private void Dispatcher_timer_Tick(object sender, EventArgs e)
+        private void dispatcher_timer_Tick(object sender, EventArgs e)
         {
-            TimeSpan time_span = new TimeSpan(Time);
+            TimeSpan time_span = TimeSpan.FromSeconds(Time);
 
             CurrentTime = String.Format("{0:00}:{1:00}", time_span.Minutes, time_span.Seconds);
 
@@ -67,12 +65,12 @@ namespace lab_501._2_SpeedTypingChallenge_GUI
                 stop_watch.Stop();
                 dispatcher_timer.Stop();
 
-                MessageBox.Show($"Total score: {score}");
+                MessageBox.Show($"Total score: {Score}");
 
-                if (Convert.ToInt32(TB_Score.Text) < Convert.ToInt32(TB_HighScore.Text))
+                if (Convert.ToInt32(TB_Score.Text) > Convert.ToInt32(TB_HighScore.Text))
                 {
+                    MessageBox.Show("Congrats! You broke your high score !!!");
                     TB_HighScore.Text = TB_Score.Text;
-                    MessageBox.Show("Congrats, you got the new high score!");
                     File.WriteAllText("score.txt", TB_Score.Text);
                 }
             }
@@ -84,33 +82,33 @@ namespace lab_501._2_SpeedTypingChallenge_GUI
             dispatcher_timer.Start();
         }
 
-        private void TB_Time_Input_TextChanged(object sender, TextChangedEventArgs e)
+        private void TB_Timer_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if(TB_Time_Input != null)
+            if(TB_Time != null)
             {
-                Time = Convert.ToInt32(TB_Time_Input.Text);
+                Time = Convert.ToInt32(TB_Time.Text);
             }
             else
             {
                 Time = 0;
             }
-
         }
 
-        private void TB_Letter_Input_TextChanged(object sender, TextChangedEventArgs e)
+        private void TB_Letters_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (TB_Letter_Input.Text[TB_Letter_Input.Text.Length - 1] == alphabet[(TB_Letter_Input.Text.Length)%26] && stop_watch.IsRunning)
+            if (TB_Letters.Text[TB_Letters.Text.Length - 1] == alphabet[(TB_Letters.Text.Length - 1) % 26]
+                && stop_watch.IsRunning)
             {
-                score++;
-                TB_Score.Text = score.ToString();
+                Score++;
+                TB_Score.Text = Score.ToString();
             }
             else
             {
-                string letters = TB_Letter_Input.Text;
-                TB_Letter_Input.TextChanged -= TB_Letter_Input_TextChanged;
-                TB_Letter_Input.Text = letters.Substring(0, letters.Length);
-                TB_Letter_Input.SelectionStart = TB_Letter_Input.Text.Length;
-                TB_Letter_Input.TextChanged += TB_Letter_Input_TextChanged;
+                string letters = TB_Letters.Text;
+                TB_Letters.TextChanged -= TB_Letters_TextChanged;
+                TB_Letters.Text = letters.Substring(0, letters.Length - 1);
+                TB_Letters.SelectionStart = TB_Letters.Text.Length;
+                TB_Letters.TextChanged += TB_Letters_TextChanged;
             }
         }
     }

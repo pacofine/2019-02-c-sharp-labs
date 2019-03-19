@@ -22,7 +22,7 @@
         <Button x:Name="ButtonChangePanel" Background="#8eb2ed" Grid.Row="1" Grid.Column="0" Content="Change Panel" Click="ButtonChangePanel_Click"/>
         <Button x:Name="ButtonChangeTab" Background="#526077" Grid.Row="2" Grid.Column="0" Content="Change Tab" Margin="3,0.6,568.6,-0.4" Click="ButtonChangeTab_Click" Grid.ColumnSpan="2"/>
         <Button x:Name="ButtonChangeName" Background="#526077" Grid.Row="3" Grid.Column="0" Content="Change Tab" Margin="7,1,564.6,-0.4" Grid.ColumnSpan="2" Click="ButtonChangeName_Click"/>
-        <StackPanel x:Name="stackPanel01" Background="#8eb2ed" Grid.Row="1" Grid.RowSpan="2"  Grid.Column="1"/>
+        <StackPanel x:Name="stackPanel01" Background="#8eb2ed" Grid.Row="1" Grid.RowSpan="1"  Grid.Column="1"/>
         <StackPanel x:Name="stackPanel02" Background="#5d87cc" Grid.Row="1" Grid.Column="1"/>
         <StackPanel x:Name="stackPanel03" Background="#3a64aa" Grid.Row="1" Grid.Column="1"/>
         <TabControl x:Name="TabControl01" Background="#788e91" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="187,62.8,2.6,-0.4">

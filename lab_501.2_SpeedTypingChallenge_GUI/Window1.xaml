@@ -10,7 +10,7 @@
         <Button x:Name="Btn_Start" Content="Start" HorizontalAlignment="Left" Margin="540,89,0,0" VerticalAlignment="Top" Width="139" Height="41" Click="Btn_Start_Click"/>
         <TextBox x:Name="TB_Letter_Input" HorizontalAlignment="Left" Height="89" Margin="101,287,0,0" TextWrapping="Wrap" FontSize="30" VerticalAlignment="Top" Width="578" TextChanged="TB_Letter_Input_TextChanged"/>
         <TextBox x:Name="TB_Time_Label" HorizontalAlignment="Left" Height="41" Margin="101,89,0,0" TextWrapping="Wrap" Text="Enter Time" FontSize="20" VerticalAlignment="Top" Width="136"/>
-        <TextBox x:Name="TB_Time_Input" HorizontalAlignment="Left" Height="101" Margin="101,152,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="136" TextChanged="TB_Time_Input_TextChanged"/>
+        <TextBox x:Name="TB_Time_Input" HorizontalAlignment="Left" Height="101" Margin="101,152,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="136" TextChanged="TB_Time_Input_TextChanged"/>
         <TextBox x:Name="TB_Score_Label" HorizontalAlignment="Left" Height="41" Margin="294,89,0,0" TextWrapping="Wrap" Text="score" FontSize="30" VerticalAlignment="Top" Width="192"/>
         <TextBox x:Name="TB_Score" HorizontalAlignment="Left" Height="101" Margin="294,152,0,0" TextWrapping="Wrap" FontSize="50" VerticalAlignment="Top" Width="192"/>
         <TextBox x:Name="TB_Timer" HorizontalAlignment="Left" Height="101" Margin="540,152,0,0" TextWrapping="Wrap" Text="00:00" FontSize="40" TextAlignment="Center" VerticalAlignment="Top" Width="139"/>
