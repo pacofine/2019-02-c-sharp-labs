@@ -60,7 +60,8 @@ namespace lab_501._1_Typing_Callenge_HighScore
 
                 MessageBox.Show($"Total score: {Score}");
 
-                if (Convert.ToInt32(TB_Score.Text) > Convert.ToInt32(TB_HighScore.Text)){
+                if (Convert.ToInt32(TB_Score.Text) > Convert.ToInt32(TB_HighScore.Text))
+                {
                     MessageBox.Show("Congrats! You broke your high score !!!");
                     TB_HighScore.Text = TB_Score.Text;
                     File.WriteAllText("score.txt", TB_Score.Text);
