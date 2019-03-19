@@ -1,0 +1,15 @@
+﻿<Window x:Class="lab_501_speed_typing_challenge_GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab_501_speed_typing_challenge_GUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="800" Background="#592882">
+    <Grid>
+        <Button x:Name="ButtonMode_1" Content="Mode 1" FontSize="30" FontFamily="Bodoni mt black" HorizontalAlignment="Left" Margin="79,191,0,0" VerticalAlignment="Top" Width="150" Height="50" Click="Button_Click"/>
+        <Button x:Name="ButtonMode_2" Content="Mode 2" FontSize="30" FontFamily="Bodoni mt black" HorizontalAlignment="Left" Margin="79,279,0,0" VerticalAlignment="Top" Width="150" Height="50" Click="ButtonMode_2_Click"/>
+        <TextBox HorizontalAlignment="Left" Height="84" Margin="250,55,0,0" TextWrapping="Wrap" Text="Speed Typing Challenge" FontFamily="Bodoni mt black" FontSize="30" TextAlignment="Center" VerticalAlignment="Top" Width="300" Background="#371a4f"/>
+
+    </Grid>
+</Window>

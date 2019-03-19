@@ -1,0 +1,23 @@
+﻿<Window x:Class="lab_501._1_Typing_Callenge_HighScore.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab_501._1_Typing_Callenge_HighScore"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800" Background="IndianRed">
+    <Grid>
+        <Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="TB_Letters" HorizontalAlignment="Left" Margin="100,300,0,26" TextWrapping="Wrap" FontFamily="Bodoni mt black" FontSize="30" Width="600" Height="100" TextChanged="TB_Letters_TextChanged"/>
+        <Button x:Name="Btn_Start" Content="Start" FontSize="30" FontFamily="Bodoni mt black" HorizontalAlignment="Left" Margin="553,89,0,0" VerticalAlignment="Top" Width="150" Height="69" Click="Btn_Start_Click"/>
+        <TextBox x:Name="TB_Timer" Padding="0,20,0,00" Text="00:00" TextAlignment="Center" FontSize="40" FontWeight="Bold" HorizontalAlignment="Left" Height="106" Margin="553,172,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="TB_Time" TextAlignment="Center" Padding="0,20,0,00" FontSize="40" FontWeight="Bold" HorizontalAlignment="Left" Height="106" Margin="103,172,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150" TextChanged="TB_Time_TextChanged_1"/>
+        <TextBox x:Name="TB_Score" Padding="0,-20,0,0" HorizontalAlignment="Left" Height="106" Margin="302,172,0,0" Text="0" FontSize="100" TextAlignment="Center"  VerticalAlignment="Top" Width="202"/>
+        <TextBox x:Name="TB_TimeLabel" HorizontalAlignment="Left" Height="69" Margin="103,89,0,0" TextWrapping="Wrap" Text="Enter Time" TextAlignment="Center" FontFamily="Bodoni mt black" FontSize="30" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="TB_ScoreLabel" HorizontalAlignment="Left" Margin="302,89,0,262" Padding="0,10,0,0" TextWrapping="Wrap" Text="Score" TextAlignment="Center" FontFamily="Bodoni mt black" FontSize="40"  Width="202"/>
+        <TextBox x:Name="TB_name" HorizontalAlignment="Left" Height="41" Margin="103,24,0,0" TextWrapping="Wrap" Text="" FontSize="30" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="TB_HighScore" HorizontalAlignment="Left" Height="41" Margin="306,24,0,0" TextWrapping="Wrap" Text="" FontSize="30" VerticalAlignment="Top" Width="198"/>
+
+    </Grid>
+</Window>
