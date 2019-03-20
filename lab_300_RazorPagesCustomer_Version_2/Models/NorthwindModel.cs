@@ -9,6 +9,8 @@ namespace lab_300_RazorPagesCustomer_Version_2.Models
     public class NorthwindModel : DbContext
     {
         public DbSet<Customer> Customers { get; set; }
+        public object Movie { get; internal set; }
+
         //public DbSet<Order> Orders { get; set; }
         //public DbSet<OrderDetail> OrderDetails { get; set; }
 
