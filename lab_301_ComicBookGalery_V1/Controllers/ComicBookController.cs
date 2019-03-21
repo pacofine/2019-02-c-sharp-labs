@@ -8,5 +8,9 @@ namespace lab_301_ComicBookGalery_V1.Controllers
 {
     public class ComicBookController : Controller
     {
+        public string detail()
+        {
+            return "hello";
+        }
     }
 }
