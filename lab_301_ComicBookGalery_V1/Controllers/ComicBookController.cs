@@ -8,9 +8,17 @@ namespace lab_301_ComicBookGalery_V1.Controllers
 {
     public class ComicBookController : Controller
     {
-        public string detail()
+        public ActionResult Detail()
         {
-            return "hello";
+            if (DateTime.Today.DayOfWeek == DayOfWeek.Monday)
+            {
+                return Redirect("/");
+            }
+
+            return new ContentResult()
+            {
+                Content = "hello from the comic book controls!"
+            };
         }
     }
 }
