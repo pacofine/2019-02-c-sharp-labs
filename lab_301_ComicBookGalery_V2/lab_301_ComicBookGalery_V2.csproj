@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{83000B20-A167-4D9F-BACD-479F8039AEDB}</ProjectGuid>
+    <ProjectGuid>{85ABD2A3-108A-4E5A-8723-F8F3EA55DB4D}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>lab_301_ComicBookGalery_V1</RootNamespace>
-    <AssemblyName>lab_301_ComicBookGalery_V1</AssemblyName>
+    <RootNamespace>lab_301_ComicBookGalery_V2</RootNamespace>
+    <AssemblyName>lab_301_ComicBookGalery_V2</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -93,7 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\ComicBookController.cs" />
+    <Compile Include="Controllers\ComicBooksController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -127,9 +127,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>65256</DevelopmentServerPort>
+          <DevelopmentServerPort>62811</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:65256/</IISUrl>
+          <IISUrl>http://localhost:62811/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
