@@ -13,93 +13,88 @@ namespace lab_110_entity
 
         static void Main(string[] args)
         {
-            // inserting new customer
+
+            // insert new customer
+
             using (var db = new NorthwindEntities())
             {
-                var customerToCreate = new Customer
+                Customer customerToCreate = new Customer
                 {
-                    CustomerID = "JAMES",
-                    ContactName = "James Daniel",
-                    City = "Richmond",
-                    CompanyName = "Sparta Global"
+                    CustomerID = "Seb",
+                    ContactName = "Seb Rod",
+                    City = "London",
+                    Country = "UK",
+                    CompanyName = "Sparta"
                 };
 
-                // add new customer to local database
+                // Now add new customer to local database
                 db.Customers.Add(customerToCreate);
-
-                //write changes permenantly to database
+                // Write changes permanently to real database
                 db.SaveChanges();
             }
+            Display();
 
-            //CRUD C:create, R:read, U:update, D:delete
 
-            // select one customer
             using (var db = new NorthwindEntities())
             {
-                // LINQ query  :  Microsoft  :  Language Independent Query
+                // LINQ query : Microsoft : Language Independent Query
                 var customerToUpdate =
-                    // select all customer in Northwind
-                    (from customer in db.Customers
-                         // choose one where ID matches
-                     where customer.CustomerID == "JAMES"
-                     // output this one selected
-                     select customer).FirstOrDefault(); //FirstOrDefault was used becuase C# doesn't know that only one 
-                                                        //customer can be returned so it makes customerToUpdate 
-                                                        //an array. FOD returns the first hit.
-
-                Console.WriteLine("\nFinding one customer\n");
-                Console.WriteLine($"{customerToUpdate.ContactName} has ID " + $"{customerToUpdate.CustomerID} from {customerToUpdate.City}");
+                // select all customers in Northwind
+                (from customer in db.Customers
+                     // choose one where ID matches
+                 where customer.CustomerID == "ALFKI"
+                 // output the selected one
+                 select customer).FirstOrDefault();
+                Console.WriteLine("\n\nFinding one customer\n");
+                Console.WriteLine($"{customerToUpdate.ContactName} lives in {customerToUpdate.City}, {customerToUpdate.Country}");
             }
 
-            //select one customer cleaner code (Pt.2)
+
             using (var db = new NorthwindEntities())
             {
+                // LINQ query : Microsoft : Language Independent Query
                 var customerToUpdate =
-                    db.Customers.Where(c => c.CustomerID == "JAME1").FirstOrDefault();
-                Console.WriteLine("\nFinding one customer\n");
-                Console.WriteLine($"{customerToUpdate.ContactName} has ID " + $"{customerToUpdate.CustomerID} from {customerToUpdate.City}");
+                        db.Customers.Where(c => c.CustomerID == "ALFKI").FirstOrDefault();
+                Console.WriteLine("\n\nFinding one customer again\n");
+                Console.WriteLine($"{customerToUpdate.ContactName} lives in {customerToUpdate.City}, {customerToUpdate.Country}");
 
-                //Update customer
-                customerToUpdate.ContactName = "Katie James";
-
-                //Update database permanently
+                // UPDATE customer
+                customerToUpdate.ContactName = "Fred Flintstone";
+                customerToUpdate.City = "Bed Rock";
+                // Update DB permanently
                 db.SaveChanges();
+
+                Console.WriteLine($"{customerToUpdate.ContactName} lives in {customerToUpdate.City}, {customerToUpdate.Country}");
             }
 
-            displayAll();
+            //delete
 
-            //delete customer
             using (var db = new NorthwindEntities())
             {
-                var customerToDelete =
-                    db.Customers.Where(c => c.CustomerID == "JAME1").FirstOrDefault();
-
-                //delete customer
+                var customerToDelete = db.Customers
+                    .Where(c => c.CustomerID == "ADAM9")
+                    .FirstOrDefault();
                 db.Customers.Remove(customerToDelete);
-
-                //update changes permenatly on database
                 db.SaveChanges();
-
             }
 
-            displayAll();
-        }
+            Display();
 
-        static void displayAll()
+        }
+        static void Display()
         {
-            //encapsulates database connection so its closed cleanly
+            // encapsulates database connection so it's closed cleanly
             using (var db = new NorthwindEntities())
             {
-                //customers list = (read from northwind )
-                //                  (pull out all customers)
-                //                  send to list of customers)
+
                 customers = db.Customers.ToList<Customer>();
             }
 
-            //use list!!!
-            foreach (var customer in customers)
+
+            // use list!!!
+            foreach (Customer customer in customers)
             {
-                Console.WriteLine($"{customer.ContactName} has ID " + $"{customer.CustomerID} from {customer.City}");
+                Console.WriteLine($"{customer.ContactName} has ID {customer.CustomerID} and lives in {customer.City}, {customer.Country}.\n");
             }
         }
     }

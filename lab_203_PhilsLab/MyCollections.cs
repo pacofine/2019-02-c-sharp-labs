@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Collections;
 
-namespace lab_201._1_PhilsLab
+namespace lab_203_PhilsLab
 {
-    public class Program
+    class MyCollections
     {
         static void Main(string[] args)
         {
